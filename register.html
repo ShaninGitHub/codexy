@@ -14,9 +14,10 @@
 
     <!-- Custom styles for this template -->
     <link href="css/narrow-jumbotron.css" rel="stylesheet">
+  <script src="lib/angular.js"></script>
 	<script>
 	var app=angular.module("codexyApp",[]);
-	app.controller("employeecontroller",function($scope){
+	app.controller("employeeController",function($scope){
 	$scope.data=[];
 	$http.get("employee.json").then(function(response)
 	{
@@ -25,10 +26,12 @@
 	
 	});
 	</script>
-	
+
+  
+
   </head>
 
-  <body>
+  <body ng-app="codexyApp">
 
     <div class="container">
 	
@@ -49,7 +52,9 @@
         </nav>
         <h3 class="text-muted">Project name</h3>
       </div>
-
+<div ng-controller="employeeController">
+  {{data}}
+</div>
    <form>
     <div class="form-group">
     <label for="fname">First Name:</label>
