@@ -14,11 +14,25 @@
 
     <!-- Custom styles for this template -->
     <link href="css/narrow-jumbotron.css" rel="stylesheet">
+	<script>
+	var app=angular.module("codexyApp",[]);
+	app.controller("employeecontroller",function($scope){
+	$scope.data=[];
+	$http.get("employee.json").then(function(response)
+	{
+	$scope.data=response.data;
+	});
+	
+	});
+	</script>
+	
   </head>
 
   <body>
 
     <div class="container">
+	
+	
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills float-right">
