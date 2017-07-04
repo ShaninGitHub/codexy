@@ -12,7 +12,7 @@
   .when("/register", {
     templateUrl : "register.html"
   }).
-  otherwise("", {
-    templateUrl : "index.html"
+  otherwise("",{
+   templateUrl : "index.html"
   })
    });
