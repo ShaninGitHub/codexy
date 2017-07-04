@@ -4,6 +4,7 @@
 	$http.get("employees.json").then(function(response)
 	{
 	$scope.data=response.data.Employees;
+    $localStorage.datastorage =response.data.Employees;  
 	});
 	
 	});
