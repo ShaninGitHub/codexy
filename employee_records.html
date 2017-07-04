@@ -1,0 +1,26 @@
+<div class="container" ng-controller="employeeRecords">
+  <h2>Employee Records</h2> 
+  <table class="table table-striped">
+    <thead>
+      <tr>
+	      <th>#</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Region</th>
+		<th>Contact No</th>
+		<th>Email Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  ng-repeat="emp in data">
+	    <td>{{emp.userId}}</td>
+        <td>{{emp.firstName}}</td>
+        <td>{{emp.lastName}}</td>
+        <td>{{emp.region}}</td>
+		 <td>{{emp.phoneNumber}}</td>
+		  <td>{{emp.emailAddress}}</td>
+      </tr>
+ 
+    </tbody>
+  </table>
+</div>
