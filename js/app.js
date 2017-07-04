@@ -10,9 +10,16 @@
   app.config(function($routeProvider) {
   $routeProvider
   .when("/register", {
-    templateUrl : "register.html"
+    templateUrl : "register.html",
+    controller : "registerCtrl"
   }).
   otherwise("",{
    templateUrl : "index.html"
   })
+   }).controller('registerCtrl', function($scope, $http){
+   		$scope.submit= function(data){
+			debugger;
+			localStorage.setItem('empRegister', JSON.stringify(data));
+
+   		}
    });

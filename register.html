@@ -7,31 +7,29 @@
    <form>
     <div class="form-group">
     <label for="fname">First Name:</label>
-    <input type="text" class="form-control" id="fname">
+    <input type="text" ng-model="emp.fname" class="form-control" id="fname">
   </div>
   
     <div class="form-group">
-    <label for="lname">First Name:</label>
-    <input type="text" class="form-control" id="lname>
+    <label for="lname">Last Name:</label>
+    <input type="text" ng-model="emp.lname" class="form-control" id="lname>
   </div>
     <div class="form-group">
     <label for="ecode">Emp code:</label>
-    <input type="text" class="form-control" id="ecode">
+    <input type="text" ng-model="emp.ecode" class="form-control" id="ecode">
   </div>
   <div class="form-group">
     <label for="email">Email address:</label>
-    <input type="email" class="form-control" id="email">
+    <input type="email" ng-model="emp.email" class="form-control" id="email">
   </div>
   <div class="form-group">
     <label for="place">Place:</label>
-    <input type="text" class="form-control" id="place">
+    <input type="text" ng-model="emp.place" class="form-control" id="place">
   </div>
     <div class="form-group">
     <label for="phone">Phone:</label>
-    <input type="text" class="form-control" id="phone">
+    <input type="text" ng-model="emp.phone" class="form-control" id="phone">
   </div>
-  <div class="checkbox">
-    <label><input type="checkbox"> Remember me</label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+ 
+  <button type="button" ng-click="submit(emp)" class="btn btn-default">Submit</button>
 </form>
