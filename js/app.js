@@ -1,35 +1,31 @@
 	var app=angular.module("codexyApp",["ngRoute"]);
 	app.controller("employeeRecords",function($scope,$http){
-	$scope.data=[];
-	$http.get("employees.json").then(function(response)
-	{
-	$scope.data=response.data.Employees;
-    $localStorage.datastorage =response.data.Employees;  
-	});
+	
 	
 	});
   app.config(function($routeProvider) {
   $routeProvider
   .when("/register", {
-<<<<<<< HEAD
+
     templateUrl : "register.html",
     controller : "registerCtrl"
-  }).
-=======
-    templateUrl : "register.html"
   })
    .when("/view_records", {
     templateUrl : "employee_records.html"
   })
-  .
->>>>>>> fc0733cd5392f89aafe158a2e17bed4a3f25613b
-  otherwise("",{
+  .otherwise("",{
    templateUrl : "index.html"
   })
    }).controller('registerCtrl', function($scope, $http){
+   	var dataArray = [];
    		$scope.submit= function(data){
-			debugger;
+   			//$scope.saved = localStorage.getItem('empRegister');
+
 			localStorage.setItem('empRegister', JSON.stringify(data));
 
+			console.log(localStorage.getItem('empRegister'));
+			//$scope.data.push(localStorage.getItem('empRegister'));
+			dataArray.push(data);
+			
    		}
    });
