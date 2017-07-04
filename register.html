@@ -1,57 +1,6 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="https://v4-alpha.getbootstrap.com/favicon.ico">
-
-    <title>Narrow Jumbotron Template for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/narrow-jumbotron.css" rel="stylesheet">
-  <script src="lib/angular.js"></script>
-	<script>
-	var app=angular.module("codexyApp",[]);
-	app.controller("employeeController",function($scope,$http){
-	$scope.data=[];
-	$http.get("employees.json").then(function(response)
-	{
-	$scope.data=response.data;
-	});
-	
-	});
-	</script>
-
-  
-
-  </head>
-
-  <body ng-app="codexyApp">
 
     <div class="container">
-	
-	
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills float-right">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
-        </nav>
-        <h3 class="text-muted">Project name</h3>
-      </div>
+
 <div ng-controller="employeeController">
   {{data}}
 </div>
@@ -86,17 +35,3 @@
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
-      <footer class="footer">
-        <p>© Company 2017</p>
-      </footer>
-
-    </div> <!-- /container -->
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-  
-
-</body></html>
