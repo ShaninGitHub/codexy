@@ -18,14 +18,19 @@
   })
    }).controller('registerCtrl', function($scope, $http){
    	var dataArray = [];
+	$scope.empRegisterList = localStorage.getItem('empRegister');
    		$scope.submit= function(data){
-   			//$scope.saved = localStorage.getItem('empRegister');
+   			debugger;
+   			
+			if((localStorage.getItem('empRegister')!==null))
+			{
+				dataArray.push(localStorage.getItem('empRegister'));
+				console.log(dataArray);
+			}
 
-			localStorage.setItem('empRegister', JSON.stringify(data));
-
-			console.log(localStorage.getItem('empRegister'));
-			//$scope.data.push(localStorage.getItem('empRegister'));
 			dataArray.push(data);
-			
+			console.log(dataArray);
+			localStorage.setItem('empRegister', JSON.stringify(dataArray));
+			$scope.empRegisterList = localStorage.getItem('empRegister');
    		}
    });
