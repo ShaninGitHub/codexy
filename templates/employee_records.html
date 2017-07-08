@@ -1,0 +1,26 @@
+<div class="container">
+  <h3>Employee Records</h3> 
+  <table class="table table-striped">
+    <thead>
+      <tr>
+       <th>Code</th>
+       <th>Firstname</th>
+       <th>Lastname</th>
+       <th>Place</th>
+       <th>Contact No</th>
+       <th>Email Address</th>
+     </tr>
+   </thead>
+   <tbody>
+    <tr  ng-repeat="emp in empList">
+     <td>{{emp.ecode}}</td>
+     <td>{{emp.fname}}</td>
+     <td>{{emp.lname}}</td>
+     <td>{{emp.place}}</td>
+     <td>{{emp.phone}}</td>
+     <td>{{emp.email}}</td>
+   </tr>
+
+ </tbody>
+</table>
+</div>
