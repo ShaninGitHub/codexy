@@ -1,36 +1,17 @@
-	var app=angular.module("codexyApp",["ngRoute"]);
-	app.controller("employeeRecords",function($scope,$http){
-	
-	
-	});
-  app.config(function($routeProvider) {
-  $routeProvider
-  .when("/register", {
+var app = angular.module("codexyApp",["ngRoute"]);
 
-    templateUrl : "register.html",
-    controller : "registerCtrl"
-  })
-   .when("/view_records", {
-    templateUrl : "employee_records.html"
-  })
-  .otherwise("",{
-   templateUrl : "index.html"
-  })
-   }).controller('registerCtrl', function($scope, $http){
-   	var dataArray = [];
-	$scope.empRegisterList = localStorage.getItem('empRegister');
-   		$scope.submit= function(data){
-   			debugger;
-   			
-			if((localStorage.getItem('empRegister')!==null))
-			{
-				dataArray.push(localStorage.getItem('empRegister'));
-				console.log(dataArray);
-			}
+app.config(function($routeProvider) {
+	$routeProvider
+	.when("/register", {
 
-			dataArray.push(data);
-			console.log(dataArray);
-			localStorage.setItem('empRegister', JSON.stringify(dataArray));
-			$scope.empRegisterList = localStorage.getItem('empRegister');
-   		}
-   });
+		templateUrl : "templates/register.html",
+		controller : "registerCtrl"
+	})
+	.when("/view_records", {
+		templateUrl : "templates/employee_records.html",
+		controller : "empRecordsCtrl"
+	})
+	.otherwise("",{
+		templateUrl : "index.html"
+	})
+});
